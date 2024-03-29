@@ -1,38 +1,38 @@
-# create-svelte
+# VV-Translation helper
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+This is a simple web app to help you translate VOICEVOX or any other software that uses the same format for translation files.
 
-## Creating a project
+## How to use
 
-If you're seeing this, you've probably already done this step. Congrats!
+The quickest way is to enter the website and click "Start from Template" and you're good to go.
 
+After you finished your translation or want to save your progress, click "Export" button on the top right corner to download the translation file.
+
+You can clice "Choose a File" to load a translation file and continue your work.
+
+#### Translate other software
+
+Prepare a translation file that looks like the [template](src/routes/assets/template.json) and load it in the website.
+
+There is a brief script I use to gather the untranslated strings from VOICEVOX [here](scripts/gather_string.py).
+
+## Development
+
+This project is built with [SvelteKit](https://kit.svelte.dev/).
 ```bash
-# create a new project in the current directory
-npm create svelte@latest
+git clone https://github.com/Patchethium/VV-Translation.git
 
-# create a new project in my-app
-npm create svelte@latest my-app
+cd VV-Translation
+
+pnpm i
+
+pnpm run dev -- --open
 ```
 
-## Developing
+## Deploy
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Vercel does everything and I don't know how to deploy myself. I'm spoiled.
 
-```bash
-npm run dev
+## License
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+[The Unlicense](LICENSE)
