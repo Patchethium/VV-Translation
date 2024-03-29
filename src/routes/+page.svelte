@@ -13,18 +13,18 @@
       <h1>Upload a file to get started</h1>
       <input type="file" on:change={handleFileChange} />
       <h1>Or Start with a Template</h1>
-      <button on:click={loadTemplate}>Load Template</button>
+      <button class="btn-primary" on:click={loadTemplate}>Load Template</button>
     </div>
   {/if}
 </div>
 
 <script lang="ts">
-import './reset.css';
-import SidePanel from './libs/SidePanel.svelte';
-import WorkSpace from './libs/WorkSpace.svelte';
-import Header from './libs/Header.svelte';
-import { fileText, modified } from './store';
-import * as template from './assets/template.json';
+import '../style.css';
+import SidePanel from '../lib/SidePanel.svelte';
+import WorkSpace from '../lib/WorkSpace.svelte';
+import Header from '../lib/Header.svelte';
+import { fileText, modified } from '../store';
+import * as template from '../assets/template.json';
 import { onMount } from 'svelte';
 
 function handleFileChange(event: Event) {

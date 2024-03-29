@@ -79,6 +79,7 @@ function ignore_file() {
 .flex-row {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 section {
   margin-bottom: 1rem;
@@ -126,7 +127,7 @@ h1 {
 .title {
   font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 1rem;
+  margin: 1rem 0;
 }
 .mark-btn {
   padding: 0.5rem;
@@ -134,6 +135,7 @@ h1 {
   background-color: #f0f0f0;
   border: none;
   cursor: pointer;
+  height: min-content;
 }
 .mark-btn:hover {
   background-color: #e0e0e0;

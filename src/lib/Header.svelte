@@ -6,11 +6,13 @@
     <a href="https://github.com/Patchethium/VV-Translation.git" target="_blank"> Github </a>
   </button>
   {#if $fileText}
-    <button class="btn" on:click={exportFile}>Export File</button>
+    <button class="btn-primary" on:click={exportFile}>Export File</button>
   {/if}
+  <div class="space-small" />
 </div>
 
 <script lang="ts">
+import '../style.css';
 import { fileText, J, modified, currentFile } from '../store';
 function exportFile() {
   console.log('Exporting file');
@@ -32,7 +34,7 @@ $: title = () => {
   } else {
     return 'Translation Support';
   }
-}
+};
 </script>
 
 <style>
@@ -81,5 +83,9 @@ a {
 
 .btn:active {
   background-color: #e0e0e0;
+}
+
+.space-small {
+  width: 1.5rem;
 }
 </style>
