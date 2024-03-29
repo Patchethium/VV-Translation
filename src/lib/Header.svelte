@@ -44,7 +44,7 @@ $: title = () => {
   padding: 1rem 0;
   display: flex;
   flex-direction: row;
-  border-bottom: solid 2px #f0f0f0;
+  border-bottom: solid 1px #f0f0f0;
   justify-content: center;
   align-items: center;
 }

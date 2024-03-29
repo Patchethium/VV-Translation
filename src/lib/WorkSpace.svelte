@@ -83,7 +83,7 @@ function ignore_file() {
 }
 section {
   margin-bottom: 1rem;
-  border: solid 2px #f0f0f0;
+  border: solid 1px #f0f0f0;
   padding: 0.5rem;
 }
 /** scrollable to prevent overflow */
@@ -113,7 +113,7 @@ h1 {
 .translation {
   width: 75%;
   padding: 0.5rem;
-  border: solid 2px;
+  border: solid 1px;
   border-radius: 0.25rem;
   outline: none;
   border-color: #f0f0f0;
