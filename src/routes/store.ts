@@ -6,6 +6,8 @@ export const fileText = writable('');
 export const fileNames: Writable<string[]> = writable([]);
 export const currentFile = writable('');
 export const J: Writable<JsonType> = writable({});
+export const modified = writable(false);
+export const projectName = writable('');
 // {filename: string, section}[]
 // section = { neighbors: string[], text: string, translation: string}[]
 export type JsonType = Record<
@@ -26,8 +28,10 @@ fileText.subscribe((value) => {
         fileNames.set(keys.toSorted());
       }
       J.set(j);
+      currentFile.set(keys[0]);
     }
   } catch (error) {
     console.log(error);
+    fileText.set('');
   }
 });

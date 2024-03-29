@@ -19,6 +19,7 @@ There is a brief script I use to gather the untranslated strings from VOICEVOX [
 ## Development
 
 This project is built with [SvelteKit](https://kit.svelte.dev/).
+
 ```bash
 git clone https://github.com/Patchethium/VV-Translation.git
 

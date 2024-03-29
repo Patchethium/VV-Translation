@@ -1,3 +1,6 @@
+<svelte:head>
+  <title>VV-Translation-helper</title>
+</svelte:head>
 <div class="main">
   <Header />
   {#if $fileText}
@@ -20,8 +23,9 @@ import './reset.css';
 import SidePanel from './libs/SidePanel.svelte';
 import WorkSpace from './libs/WorkSpace.svelte';
 import Header from './libs/Header.svelte';
-import { fileText } from './store';
+import { fileText, modified } from './store';
 import * as template from './assets/template.json';
+import { onMount } from 'svelte';
 
 function handleFileChange(event: Event) {
   const target = event.target as HTMLInputElement;
@@ -37,8 +41,18 @@ function handleFileChange(event: Event) {
 
 function loadTemplate() {
   // type magic to to get rid of the "default" key
-  fileText.set(JSON.stringify(template["default" as keyof typeof template], null, 2));
+  fileText.set(JSON.stringify(template['default' as keyof typeof template], null, 2));
 }
+
+onMount(() => {
+  // remind the user to save before leaving
+  window.onbeforeunload = (e: BeforeUnloadEvent) => {
+    if ($modified) {
+      e.preventDefault();
+      e.returnValue = '';
+    }
+  };
+});
 </script>
 
 <style>
@@ -73,6 +87,6 @@ h1 {
 }
 
 button {
-  width: max-content
+  width: max-content;
 }
 </style>

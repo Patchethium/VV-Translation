@@ -1,13 +1,17 @@
 <div class="root">
   <h1>Translation Support</h1>
   <div class="space" />
+  <!-- Github link -->
+  <button class="btn">
+    <a href="https://github.com/Patchethium/VV-Translation.git" target="_blank"> Github </a>
+  </button>
   {#if $fileText}
     <button class="btn" on:click={exportFile}>Export File</button>
   {/if}
 </div>
 
 <script lang="ts">
-import { fileText, J } from '../store';
+import { fileText, J, modified } from '../store';
 function exportFile() {
   console.log('Exporting file');
   // exports the J into a file
@@ -18,7 +22,8 @@ function exportFile() {
   a.href = url;
   a.download = 'translation.json';
   a.click();
-  URL.revokeObjectURL(url); 
+  URL.revokeObjectURL(url);
+  modified.set(false); // reset the modified flag since they just saved
 }
 </script>
 
@@ -43,8 +48,16 @@ h1 {
   flex-grow: 1;
 }
 
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
 .btn {
+  text-decoration: none;
+  color: #000000;
   width: auto;
+  height: auto;
   margin-right: 1rem;
   border: none;
   outline: none;

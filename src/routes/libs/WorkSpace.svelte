@@ -1,7 +1,7 @@
 <main>
   {#if sections}
     <div class="flex-row">
-      <div class="title">Workspace</div>
+      <div class="title">{$currentFile}</div>
       <div class="space" />
       <button class="mark-btn" on:click={ignore_file}>Ignore File</button>
     </div>
@@ -47,7 +47,7 @@
 </svelte:head>
 
 <script lang="ts">
-import { J, currentFile } from '../store';
+import { J, currentFile, modified } from '../store';
 import Prism from 'prismjs';
 $: sections = $J[$currentFile];
 $: language = $currentFile.split('.').pop() == 'ts' ? 'javascript' : 'html';
@@ -61,6 +61,7 @@ function update_translation(e: Event, i: number) {
   const target = e.target as HTMLInputElement;
   const value = target.value;
   $J[$currentFile][i].translation = value;
+  modified.set(true);
 }
 
 function mark_as_comment(i: number) {
