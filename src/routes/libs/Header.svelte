@@ -1,5 +1,5 @@
 <div class="root">
-  <h1>Translation Support</h1>
+  <h1>{title()}</h1>
   <div class="space" />
   <!-- Github link -->
   <button class="btn">
@@ -11,7 +11,7 @@
 </div>
 
 <script lang="ts">
-import { fileText, J, modified } from '../store';
+import { fileText, J, modified, currentFile } from '../store';
 function exportFile() {
   console.log('Exporting file');
   // exports the J into a file
@@ -24,6 +24,14 @@ function exportFile() {
   a.click();
   URL.revokeObjectURL(url);
   modified.set(false); // reset the modified flag since they just saved
+}
+
+$: title = () => {
+  if ($currentFile) {
+    return `Translation Support / ${$currentFile}`;
+  } else {
+    return 'Translation Support';
+  }
 }
 </script>
 
