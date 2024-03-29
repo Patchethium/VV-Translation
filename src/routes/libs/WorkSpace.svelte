@@ -7,12 +7,8 @@
     </div>
     {#each sections as section, i}
       <section class="line-numbers">
-        <div class="code">
-          {@html Prism.highlight(
-            join('\n', section.neighbors),
-            Prism.languages[language],
-            language
-          )}
+        <div>
+          <Prism language={language} source={join("\n", section.neighbors)} />
         </div>
         <h1>Original</h1>
         <h2 class="text">
@@ -48,7 +44,7 @@
 
 <script lang="ts">
 import { J, currentFile, modified } from '../store';
-import Prism from 'prismjs';
+import Prism from 'svelte-prism';
 $: sections = $J[$currentFile];
 $: language = $currentFile.split('.').pop() == 'ts' ? 'javascript' : 'html';
 
@@ -86,6 +82,8 @@ function ignore_file() {
 }
 section {
   margin-bottom: 1rem;
+  border: solid 2px #f0f0f0;
+  padding: 0.5rem;
 }
 /** scrollable to prevent overflow */
 main {
@@ -109,15 +107,6 @@ main {
 h1 {
   font-weight: bold;
   margin: 0.5rem 0;
-}
-
-.code {
-  white-space: pre-wrap;
-  line-height: 120%;
-  border: solid 2px #f0f0f0;
-  border-radius: 0.5rem;
-  padding: 0.5rem;
-  margin: 1rem 0;
 }
 
 .translation {
