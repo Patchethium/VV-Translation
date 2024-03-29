@@ -5,9 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 devDependencies:
-  '@sveltejs/adapter-auto':
-    specifier: ^3.0.0
-    version: 3.2.0(@sveltejs/kit@2.5.5)
+  '@sveltejs/adapter-static':
+    specifier: ^3.0.1
+    version: 3.0.1(@sveltejs/kit@2.5.5)
   '@sveltejs/kit':
     specifier: ^2.0.0
     version: 2.5.5(@sveltejs/vite-plugin-svelte@3.0.2)(svelte@4.2.12)(vite@5.2.7)
@@ -17,6 +17,9 @@ devDependencies:
   '@types/eslint':
     specifier: ^8.56.0
     version: 8.56.6
+  '@types/prismjs':
+    specifier: ^1.26.3
+    version: 1.26.3
   '@typescript-eslint/eslint-plugin':
     specifier: ^7.0.0
     version: 7.4.0(@typescript-eslint/parser@7.4.0)(eslint@8.57.0)(typescript@5.4.3)
@@ -38,6 +41,9 @@ devDependencies:
   prettier-plugin-svelte:
     specifier: ^3.1.2
     version: 3.2.2(prettier@3.2.5)(svelte@4.2.12)
+  prismjs:
+    specifier: ^1.29.0
+    version: 1.29.0
   svelte:
     specifier: ^4.2.7
     version: 4.2.12
@@ -508,13 +514,12 @@ packages:
     dev: true
     optional: true
 
-  /@sveltejs/adapter-auto@3.2.0(@sveltejs/kit@2.5.5):
-    resolution: {integrity: sha512-She5nKT47kwHE18v9NMe6pbJcvULr82u0V3yZ0ej3n1laWKGgkgdEABE9/ak5iDPs93LqsBkuIo51kkwCLBjJA==}
+  /@sveltejs/adapter-static@3.0.1(@sveltejs/kit@2.5.5):
+    resolution: {integrity: sha512-6lMvf7xYEJ+oGeR5L8DFJJrowkefTK6ZgA4JiMqoClMkKq0s6yvsd3FZfCFvX1fQ0tpCD7fkuRVHsnUVgsHyNg==}
     peerDependencies:
       '@sveltejs/kit': ^2.0.0
     dependencies:
       '@sveltejs/kit': 2.5.5(@sveltejs/vite-plugin-svelte@3.0.2)(svelte@4.2.12)(vite@5.2.7)
-      import-meta-resolve: 4.0.0
     dev: true
 
   /@sveltejs/kit@2.5.5(@sveltejs/vite-plugin-svelte@3.0.2)(svelte@4.2.12)(vite@5.2.7):
@@ -597,6 +602,10 @@ packages:
 
   /@types/json-schema@7.0.15:
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
+    dev: true
+
+  /@types/prismjs@1.26.3:
+    resolution: {integrity: sha512-A0D0aTXvjlqJ5ZILMz3rNfDBOx9hHxLZYv2by47Sm/pqW35zzjusrZTryatjN/Rf8Us2gZrJD+KeHbUSTux1Cw==}
     dev: true
 
   /@types/pug@2.0.10:
@@ -1671,6 +1680,11 @@ packages:
     resolution: {integrity: sha512-3/GWa9aOC0YeD7LUfvOG2NiDyhOWRvt1k+rcKhOuYnMY24iiCphgneUfJDyFXd6rZCAnuLBv6UeAULtrhT/F4A==}
     engines: {node: '>=14'}
     hasBin: true
+    dev: true
+
+  /prismjs@1.29.0:
+    resolution: {integrity: sha512-Kx/1w86q/epKcmte75LNrEoT+lX8pBpavuAbvJWRXar7Hz8jrtF+e3vY751p0R8H9HdArwaCTNDDzHg/ScJK1Q==}
+    engines: {node: '>=6'}
     dev: true
 
   /punycode@2.3.1:
