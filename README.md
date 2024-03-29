@@ -12,9 +12,9 @@ You can clice "Choose a File" to load a translation file and continue your work.
 
 #### Translate other software
 
-Prepare a translation file that looks like the [template](src/routes/assets/template.json) and load it in the website.
+Prepare a translation file that looks like the [template](src/assets/template.json) and load it in the website.
 
-There is a brief script I use to gather the untranslated strings from VOICEVOX [here](scripts/gather_string.py).
+There is a brief script I use to gather the untranslated strings from VOICEVOX [here](script/gather_string.py).
 
 ## Development
 
